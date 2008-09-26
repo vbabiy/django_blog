@@ -4,19 +4,21 @@
 <head>
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="/site_media/css/main.css" media="all"/>
-    <!--[if lt IE 7]>
-        
-    <![endif]--> 
+    <script src="/site_media/js/typography/syncotype.js" type="text/javascript"></script>
 </head>
 <body>
     <div id="body_wrapper">
         <div id="header">
-            Vitaly Babiy's Blog
-            <ul id="menu">
-                <li class="current"><a href="#">Home</a></li>
-                <li><a href="#">About Me</a></li>
+            <h1>Vitaly Babiy's Blog</h1>
+            <p class="date_time">{% now "l, jS F" %}</p>
+        </div>
+        <div id="menu">
+            <ul>
+                <li class=""><a href="#">Home</a></li>
+                <li class="current"><a href="#">About Me</a></li>
                 <li><a href="#">Projects</a></li>
                 <li><a href="#">Profilo</a></li>
+                <li id="rss_feed_tab"><a href="#"><img src="/site_media/images/layout/rss_button.png" /></a></li>
             </ul>
         </div>
         <div id="main_body">

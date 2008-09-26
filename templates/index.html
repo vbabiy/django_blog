@@ -1,16 +1,20 @@
 {% extends "base.html" %}
+{% load webdesign %}
 
 {% block title %}Test{% endblock %}
 {% block body %}
     {% for post in posts %}
         <div class="post">
             <div class="header">
-                <p class="title">{{ post.title }}</p>
-                <p class="date_published"> {{ post.date_published }}</p>
+                <h2 class="title">{{ post.title }}</h2>
+                <p class="date_published"> {{ post.date_published }} || {{ post.created_by.username }}</p>
                 <p class="comment_count">100</p>
             </div>
             <div class="post_body">
-                {{ post.body }}
+                {% lorem 3 p %}
+            </div>
+            <div class="post_tags">
+                Tag1, Tag2, Tag3, Tag4, Tag5, Tag1, Tag2, Tag3, Tag4, Tag5
             </div>
         </div>
     {% endfor %}

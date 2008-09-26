@@ -33,28 +33,43 @@ blockquote:before,blockquote:after {
 /* Main CSS */
 body {
 	background: #5eb4e2 url("/site_media/images/layout/background.png") repeat-x left top;
-	font-family: "Helvetica Neue",Arial,sans-serif;
+	font-family: verdana, "trebuchet MS", helvetica, sans-serif;
+	text-align:center;
 }
 
 div#body_wrapper {
 	margin: 0 auto;
 	width: 970px;
+	text-align: left;
 }
-
 div#header {
-	font-size: 2em;
 	color: white;
 	background: url("/site_media/images/layout/beta_badge.png") no-repeat 375px 33px;
-}
-ul#menu {;
-	list-style: none;
-	color: #1b3340;
-	font-size: .7em;
-	padding-top: 75px;
-	font-variant:small-caps;
+	height: 107px;
+	position: relative;
 }
 
-ul#menu li.current {
+div#header h1 {
+	font-size: 2em;
+}
+
+div#header p.date_time {
+	font-family:georgia,serif;
+	font-size:1em;
+	font-weight:bold;
+	position:absolute;
+	right:24px;
+	top:114px;
+}
+
+/* Menu */
+div#menu {;
+	list-style: none;
+	color: #1b3340;
+	font-size: 1.25em;
+}
+
+div#menu li.current {
 	background: url("/site_media/images/layout/tab.png") no-repeat left top;
 	width: 111px;
 	height: 35px;
@@ -63,7 +78,7 @@ ul#menu li.current {
 
 }
 
-ul#menu li{
+div#menu li{
 	background: url("/site_media/images/layout/tab.png") no-repeat left bottom;
 	width: 111px;
 	height: 35px;
@@ -71,7 +86,7 @@ ul#menu li{
 	float: left;
 }
 
-ul#menu li a {
+div#menu li a {
 	text-align: center;
 	padding-top: 5px;
 	display: block;
@@ -80,65 +95,83 @@ ul#menu li a {
 	font-size: 1em;
 }
 
+div#menu li#rss_feed_tab {
+	margin-left: 172px;
+}
 div#main_body div#content_header {
 	background: url("/site_media/images/layout/body_top.png") no-repeat left top;
-	clear: both;
 	height: 36px;
+	clear: both;
 }
 div#main_body div#wrapper {
 	background: url("/site_media/images/layout/wrapper_background.png") repeat-y left top;
-	clear: both;
 	min-height:100px;
 }
 
 div#main_body div#footer{
 	background: url("/site_media/images/layout/footer_background.png") repeat-y left top;
-	clear: both;
 	height: 100px;
 }
 
 div.post {
 	width: 748px;
-}
-
-/* Classes Using for Posts */
-div.post p.title {
-	font-size: 25px;
-	font-weight: bold;
 	color: #494848;
-	padding: 5px 5px;
 }
 
 /* Classes Using for Posts */
+
+
 div.post div.header {
 	background-color: #d9d9d9;
-	font-size: 25px;
 	font-weight: bold;
 	color: #494848;
-	padding: 5px 5px;
+	padding: 6px;
 	font-family: sans-serif;
 	position: relative;
 }
+
+div.post h2.title {
+	font-size: 1.625em;
+	font-weight: bold;
+	color: #494848;
+	font-family: georgia, serif;
+	padding-bottom: 4px;
+}
+
+div.post div.header .date_published {
+	font-size: .625em;
+}
+
 div.post div.header .comment_count{
 	color:white;
 	position: absolute;
 	background: url("/site_media/images/layout/comment_bubble.png") no-repeat;
 	width:52px;
 	height: 47px;
-	top: 10px;
+	top: 18px;
 	left: 726px;
-	font-size: 15px;
+	font-size: 1em;
 	font-weight: bold;
 	padding: 13px 10px;
 }
 
 div.post div.post_body {
-	font-size: 14px;
-	line-height: 20px;
+	font-size: .875em;
+	line-height: 18px;
 	color: #494848;
-	padding: 5px 5px;
+	padding: 6px 6px;
 }
 
-div.post div.header .date_published {
-	font-size: 10px;
+/* Post Body Formating */
+div.post div.post_body p {
+	margin: 8px 0px 0px;
+	line-height:inherit;
+	color:inherit;
+}
+
+div.post div.post_tags {
+	background: url("/site_media/images/layout/tag.png") no-repeat 10px top;
+	font-size: .625em;
+	padding: 6px 6px 0px 36px;
+	min-height: 19px;
 }
