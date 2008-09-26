@@ -1,0 +1,144 @@
+/* Reset CSS */
+html,body,div,span,
+applet,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+a,abbr,acronym,address,big,cite,code,
+del,dfn,em,font,img,ins,kbd,q,s,samp,
+small,strike,strong,sub,sup,tt,var,
+dd,dl,dt,li,ol,ul,
+fieldset,form,label,legend,
+table,caption,tbody,tfoot,thead,tr,th,td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 100%;
+	line-height: 1;
+	font-family: inherit;
+	text-align: left;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+ol,ul {
+	list-style: none;
+}
+q:before,q:after,
+blockquote:before,blockquote:after {
+	content: "";
+}
+
+/* Main CSS */
+body {
+	background: #5eb4e2 url("/site_media/images/layout/background.png") repeat-x left top;
+	font-family: "Helvetica Neue",Arial,sans-serif;
+}
+
+div#body_wrapper {
+	margin: 0 auto;
+	width: 970px;
+}
+
+div#header {
+	font-size: 2em;
+	color: white;
+	background: url("/site_media/images/layout/beta_badge.png") no-repeat 375px 33px;
+}
+ul#menu {;
+	list-style: none;
+	color: #1b3340;
+	font-size: .7em;
+	padding-top: 75px;
+	font-variant:small-caps;
+}
+
+ul#menu li.current {
+	background: url("/site_media/images/layout/tab.png") no-repeat left top;
+	width: 111px;
+	height: 35px;
+	margin: 0px 5px 0px 0px;
+	float: left;
+
+}
+
+ul#menu li{
+	background: url("/site_media/images/layout/tab.png") no-repeat left bottom;
+	width: 111px;
+	height: 35px;
+	margin: 0px 5px 0px 0px;
+	float: left;
+}
+
+ul#menu li a {
+	text-align: center;
+	padding-top: 5px;
+	display: block;
+	text-decoration: none;
+	color: #1b3340;
+	font-size: 1em;
+}
+
+div#main_body div#content_header {
+	background: url("/site_media/images/layout/body_top.png") no-repeat left top;
+	clear: both;
+	height: 36px;
+}
+div#main_body div#wrapper {
+	background: url("/site_media/images/layout/wrapper_background.png") repeat-y left top;
+	clear: both;
+	min-height:100px;
+}
+
+div#main_body div#footer{
+	background: url("/site_media/images/layout/footer_background.png") repeat-y left top;
+	clear: both;
+	height: 100px;
+}
+
+div.post {
+	width: 748px;
+}
+
+/* Classes Using for Posts */
+div.post p.title {
+	font-size: 25px;
+	font-weight: bold;
+	color: #494848;
+	padding: 5px 5px;
+}
+
+/* Classes Using for Posts */
+div.post div.header {
+	background-color: #d9d9d9;
+	font-size: 25px;
+	font-weight: bold;
+	color: #494848;
+	padding: 5px 5px;
+	font-family: sans-serif;
+	position: relative;
+}
+div.post div.header .comment_count{
+	color:white;
+	position: absolute;
+	background: url("/site_media/images/layout/comment_bubble.png") no-repeat;
+	width:52px;
+	height: 47px;
+	top: 10px;
+	left: 726px;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 13px 10px;
+}
+
+div.post div.post_body {
+	font-size: 14px;
+	line-height: 20px;
+	color: #494848;
+	padding: 5px 5px;
+}
+
+div.post div.header .date_published {
+	font-size: 10px;
+}
