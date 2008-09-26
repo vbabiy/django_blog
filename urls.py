@@ -1,5 +1,4 @@
 from django.conf.urls.defaults import *
-<<<<<<< HEAD:urls.py
 from django_blog.blog.views import recent_post
 
 import os.path

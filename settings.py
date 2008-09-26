@@ -19,7 +19,6 @@ DATABASE_HOST = ''             # Set to empty string for localhost. Not used wit
 DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
 
 # Local time zone for this installation. Choices can be found here:
-<<<<<<< HEAD:settings.py
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # If running in a Windows environment this must be set to the same as your
@@ -69,7 +68,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'django_blog.urls'
 
 TEMPLATE_DIRS = (
-    os.path.join(os.path.dirname(__file__), "/templates"),
+    os.path.join(os.path.dirname(__file__), "templates"),
 )
 
 INSTALLED_APPS = (
