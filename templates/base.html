@@ -1,3 +1,4 @@
+{% load webdesign %}
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -8,25 +9,79 @@
 </head>
 <body>
     <div id="body_wrapper">
+        <!-- Header -->
         <div id="header">
             <h1>Vitaly Babiy's Blog</h1>
             <p class="date_time">{% now "l, jS F" %}</p>
         </div>
+        
+        <!-- Menu -->
         <div id="menu">
             <ul>
-                <li class=""><a href="#">Home</a></li>
-                <li class="current"><a href="#">About Me</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Profilo</a></li>
-                <li id="rss_feed_tab"><a href="#"><img src="/site_media/images/layout/rss_button.png" /></a></li>
+                <li class="current">
+                    <div class="right_tab">
+                        <div class="left_tab">
+                            <a href="#">Home</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="">
+                    <div class="right_tab">
+                        <div class="left_tab">
+                            <a href="#">About Me</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="right_tab">
+                        <div class="left_tab">
+                            <a href="#">Projects</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="right_tab">
+                        <div class="left_tab">
+                            <a href="#">Profilo</a>
+                        </div>
+                    </div>
+                </li>
+                <li id="rss_feed_tab">
+                    <div class="right_tab">
+                        <div class="left_tab">
+                            <a href="#"><img src="/site_media/images/layout/rss_button.png" alt="rss_logo"/></a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
+        
+        <!-- Body -->
         <div id="main_body">
             <div id="content_header"></div>
             <div id="wrapper">
+                <div id="sidebar">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Django</li>
+                    </ul>
+                    <h3>Archives</h3>
+                </div>
                 {% block body %} {% endblock %}
-            </div>
-            <div id="footer"></div>
+             </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div id="footer_background">
+        <div id="footer_center">
+            <p class="copyright">
+                &copy; 2008 Vitaly Babiy’s Blog | Designed and Developed by Vitaly Babiy.
+            </p>
+            <p class="django_badge">
+                <a href="http://www.djangoproject.com/"><img src="http://media.djangoproject.com/img/badges/djangomade124x25_grey.gif" border="0" alt="Made with Django." title="Made with Django." /></a>
+            </p>
         </div>
     </div>
 </body>

@@ -3,19 +3,21 @@
 
 {% block title %}Test{% endblock %}
 {% block body %}
-    {% for post in posts %}
-        <div class="post">
-            <div class="header">
-                <h2 class="title">{{ post.title }}</h2>
-                <p class="date_published"> {{ post.date_published }} || {{ post.created_by.username }}</p>
-                <p class="comment_count">100</p>
+    <div id="posts">
+        {% for post in posts %}
+            <div class="post">
+                <div class="header">
+                    <h2 class="title">{{ post.title }}</h2>
+                    <p class="date_published"> {{ post.date_published }} || {{ post.created_by.username }}</p>
+                    <p class="comment_count">25</p>
+                </div>
+                <div class="post_body">
+                    {% lorem 3 p %}
+                </div>
+                <div class="post_tags">
+                    Tag1, Tag2, Tag3, Tag4, Tag5, Tag1, Tag2, Tag3, Tag4, Tag5
+                </div>
             </div>
-            <div class="post_body">
-                {% lorem 3 p %}
-            </div>
-            <div class="post_tags">
-                Tag1, Tag2, Tag3, Tag4, Tag5, Tag1, Tag2, Tag3, Tag4, Tag5
-            </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
 {% endblock %}

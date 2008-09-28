@@ -1,34 +1,4 @@
-/* Reset CSS */
-html,body,div,span,
-applet,object,iframe,
-h1,h2,h3,h4,h5,h6,p,blockquote,pre,
-a,abbr,acronym,address,big,cite,code,
-del,dfn,em,font,img,ins,kbd,q,s,samp,
-small,strike,strong,sub,sup,tt,var,
-dd,dl,dt,li,ol,ul,
-fieldset,form,label,legend,
-table,caption,tbody,tfoot,thead,tr,th,td {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-weight: normal;
-	font-style: normal;
-	font-size: 100%;
-	line-height: 1;
-	font-family: inherit;
-	text-align: left;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-ol,ul {
-	list-style: none;
-}
-q:before,q:after,
-blockquote:before,blockquote:after {
-	content: "";
-}
+@import url("reset.css");
 
 /* Main CSS */
 body {
@@ -55,11 +25,11 @@ div#header h1 {
 
 div#header p.date_time {
 	font-family:georgia,serif;
-	font-size:1em;
+	font-size:.75em;
 	font-weight:bold;
 	position:absolute;
-	right:24px;
-	top:114px;
+	right:19px;
+	top:122px;
 }
 
 /* Menu */
@@ -67,23 +37,32 @@ div#menu {;
 	list-style: none;
 	color: #1b3340;
 	font-size: 1.25em;
-}
-
-div#menu li.current {
-	background: url("/site_media/images/layout/tab.png") no-repeat left top;
-	width: 111px;
-	height: 35px;
-	margin: 0px 5px 0px 0px;
-	float: left;
-
+	position: relative;
 }
 
 div#menu li{
-	background: url("/site_media/images/layout/tab.png") no-repeat left bottom;
-	width: 111px;
-	height: 35px;
 	margin: 0px 5px 0px 0px;
 	float: left;
+	width: 5.5em;
+}
+div#menu li.current div.left_tab {
+	background: url("/site_media/images/layout/tab_left.png") no-repeat left top;
+	height: inherit
+}
+
+div#menu li.current div.right_tab{	
+	background: url("/site_media/images/layout/tab_right.png") no-repeat right top;
+	height: 35px;
+}
+
+div#menu li div.left_tab {
+	background: url("/site_media/images/layout/tab_left.png") no-repeat left bottom;
+	height: inherit
+}
+
+div#menu li div.right_tab{
+	background: url("/site_media/images/layout/tab_right.png") no-repeat right bottom;
+	height: 35px;
 }
 
 div#menu li a {
@@ -93,10 +72,13 @@ div#menu li a {
 	text-decoration: none;
 	color: #1b3340;
 	font-size: 1em;
+	white-space: nowrap;
 }
 
 div#menu li#rss_feed_tab {
-	margin-left: 172px;
+	right: 217.5px;
+	width: 50px;
+	position: absolute;
 }
 div#main_body div#content_header {
 	background: url("/site_media/images/layout/body_top.png") no-repeat left top;
@@ -119,8 +101,6 @@ div.post {
 }
 
 /* Classes Using for Posts */
-
-
 div.post div.header {
 	background-color: #d9d9d9;
 	font-weight: bold;
@@ -146,13 +126,14 @@ div.post div.header .comment_count{
 	color:white;
 	position: absolute;
 	background: url("/site_media/images/layout/comment_bubble.png") no-repeat;
-	width:52px;
+	width:42px;
 	height: 47px;
 	top: 18px;
 	left: 726px;
 	font-size: 1em;
 	font-weight: bold;
-	padding: 13px 10px;
+	padding: 13px 10px 13px 5px;
+	text-align: center;
 }
 
 div.post div.post_body {
@@ -174,4 +155,49 @@ div.post div.post_tags {
 	font-size: .625em;
 	padding: 6px 6px 0px 36px;
 	min-height: 19px;
+}
+
+/* Sidebar */
+div#sidebar {
+	float:right;
+	width: 202px;
+	padding-right: 15px;
+	text-align: right;
+}
+
+div#sidebar h3 {
+	font-weight: bold;
+	text-align: inherit;
+	color: #494848;
+}
+
+div#sidebar li {
+	text-align: right;
+	color: #494848;
+	padding: 2px 0px;
+}
+
+/* Footer*/
+div#footer_background {
+	background: #1B3340 url("/site_media/images/layout/footer_background.png") repeat-x;
+	padding-bottom: 10px;
+	clear: both;
+	text-align: center;
+}
+
+div#footer_center{
+	background: #1B3340 url("/site_media/images/layout/footer_center.png") no-repeat;
+	width: 970px;
+	height: 43px;
+	margin: 0 auto;
+	padding-top: 40px;
+	color: #E6F4FB;
+	font-size: 0.875em;
+	position: relative;
+}
+
+div#footer_center p.django_badge {
+	position: absolute;
+	right:50px;
+	top: 42px;
 }
