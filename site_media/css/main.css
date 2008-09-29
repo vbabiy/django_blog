@@ -14,7 +14,7 @@ div#body_wrapper {
 }
 div#header {
 	color: white;
-	background: url("/site_media/images/layout/beta_badge.png") no-repeat 375px 33px;
+	background: url("/site_media/images/layout/beta_badge.png") no-repeat 407px 33px;
 	height: 107px;
 	position: relative;
 }
@@ -38,12 +38,14 @@ div#menu {;
 	color: #1b3340;
 	font-size: 1.25em;
 	position: relative;
+	font-family: Trebuchet MS, sans-serif;
+	font-weight: bold;
 }
 
 div#menu li{
 	margin: 0px 5px 0px 0px;
 	float: left;
-	width: 5.5em;
+	width: 6em;
 }
 div#menu li.current div.left_tab {
 	background: url("/site_media/images/layout/tab_left.png") no-repeat left top;
@@ -160,7 +162,7 @@ div.post div.post_tags {
 /* Sidebar */
 div#sidebar {
 	float:right;
-	width: 202px;
+	width: 190px;
 	padding-right: 15px;
 	text-align: right;
 }
@@ -169,12 +171,25 @@ div#sidebar h3 {
 	font-weight: bold;
 	text-align: inherit;
 	color: #494848;
+	border-bottom:1px dashed;
+	margin: 12px 0px 2px;
+	text-transform: uppercase;
 }
 
 div#sidebar li {
 	text-align: right;
 	color: #494848;
 	padding: 2px 0px;
+	font-size: .75em;
+}
+
+div#sidebar li a {
+	text-decoration: none;
+	color:inherit;
+}
+
+div#sidebar li a:hover {
+	color: #5eb4e2;
 }
 
 /* Footer*/
