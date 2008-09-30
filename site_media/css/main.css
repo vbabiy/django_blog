@@ -154,9 +154,18 @@ div.post div.post_body p {
 
 div.post div.post_tags {
 	background: url("/site_media/images/layout/tag.png") no-repeat 10px top;
-	font-size: .625em;
-	padding: 6px 6px 0px 36px;
+	padding: 0px 6px 6px 36px;
 	min-height: 19px;
+}
+
+div.post div.post_tags a {
+	font-size: .625em;
+	text-decoration: none;
+	color: #494848;
+}
+
+div.post div.post_tags a:hover {
+	color: #D9D9D9;
 }
 
 /* Sidebar */
