@@ -1,27 +1,11 @@
 {% extends "base.html" %}
 {% load webdesign %}
 
-{% block title %}Test{% endblock %}
+{% block title %}Vitaly Babiy's Blog{% endblock %}
 {% block body %}
     <div id="posts">
         {% for post in posts %}
-            <div class="post">
-                <div class="header">
-                    <h2 class="title">{{ post.title }}</h2>
-                    <p class="date_published"> {{ post.date_published }} || {{ post.created_by.username }}</p>
-                    <p class="comment_count">25</p>
-                </div>
-                <div class="post_body">
-                    {% lorem 4 p %}
-                </div>
-                <div class="post_tags">
-                    <a href="#">Ubuntu</a>
-                    <a href="#">Linux</a>
-                    <a href="#">Python</a>
-                    <a href="#">Django</a>
-                    <a href="#">Tag</a>
-                </div>
-            </div>
+            {% include "blog/post.html" %}
         {% endfor %}
     </div>
 {% endblock %}

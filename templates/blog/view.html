@@ -1,8 +1,5 @@
 {% extends "base.html" %}
 {% block title %}{{ post.title }}{% endblock %}
 {% block body %}
-    <div>
-        <p>{{ post.title }}</p>
-        <p>{{ post.body }}</p>
-    </div>
+    {% include "blog/post.html" %}
 {% endblock %}

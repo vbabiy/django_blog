@@ -1,0 +1,17 @@
+<div class="post">
+    <div class="header">
+        <h2><a class="title" href="{% url django_blog.blog.views.view_post post.id %}">{{ post.title }}</a></h2>
+        <p class="date_published"> {{ post.date_published|date:"l, F jS, Y @ g:i A" }} \\ {{ post.created_by.username }}</p>
+        <p class="comment_count">25</p>
+    </div>
+    <div class="post_body">
+        {{ post.body|safe }}
+    </div>
+    <div class="post_tags">
+        <a href="#">Ubuntu</a>
+        <a href="#">Linux</a>
+        <a href="#">Python</a>
+        <a href="#">Django</a>
+        <a href="#">Tag</a>
+    </div>
+</div>

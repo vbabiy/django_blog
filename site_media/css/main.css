@@ -7,6 +7,10 @@ body {
 	text-align:center;
 }
 
+a {
+	text-decoration: none;
+}
+
 div#body_wrapper {
 	margin: 0 auto;
 	width: 970px;
@@ -71,7 +75,6 @@ div#menu li a {
 	text-align: center;
 	padding-top: 5px;
 	display: block;
-	text-decoration: none;
 	color: #1b3340;
 	font-size: 1em;
 	white-space: nowrap;
@@ -112,12 +115,19 @@ div.post div.header {
 	position: relative;
 }
 
-div.post h2.title {
+div.post h2 {
+	padding-bottom: 4px;
+}
+
+div.post h2 a.title {
 	font-size: 1.625em;
 	font-weight: bold;
 	color: #494848;
 	font-family: georgia, serif;
-	padding-bottom: 4px;
+}
+
+div.post h2 a.title:hover {
+	color: #5eb4e2;
 }
 
 div.post div.header .date_published {
@@ -147,11 +157,39 @@ div.post div.post_body {
 
 /* Post Body Formating */
 div.post div.post_body p {
-	margin: 8px 0px 0px;
 	line-height:inherit;
-	color:inherit;
 }
 
+
+/* Body Elements */
+div.post_body h1 {
+	font-size: 1.2em;
+}
+
+div.post_body h2 {
+	font-size: 1.2em;
+}
+
+div.post_body h3 {
+	font-size: 1.2em;
+}
+
+div.post_body p {
+	font-size: inherit;
+	margin: 6px 0px;
+}
+
+div.post_body ul {
+	list-style: disc;
+	list-style-position: outside;
+	margin-left: 20px;
+}
+
+div.post_body li {
+	padding-bottom: 6px;
+}
+
+/* Tags */
 div.post div.post_tags {
 	background: url("/site_media/images/layout/tag.png") no-repeat 10px top;
 	padding: 0px 6px 6px 36px;
@@ -160,12 +198,11 @@ div.post div.post_tags {
 
 div.post div.post_tags a {
 	font-size: .625em;
-	text-decoration: none;
 	color: #494848;
 }
 
 div.post div.post_tags a:hover {
-	color: #D9D9D9;
+	color: #5eb4e2;
 }
 
 /* Sidebar */
@@ -193,7 +230,6 @@ div#sidebar li {
 }
 
 div#sidebar li a {
-	text-decoration: none;
 	color:inherit;
 }
 
