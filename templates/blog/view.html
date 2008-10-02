@@ -1,5 +1,31 @@
 {% extends "base.html" %}
+{% load comments %}
 {% block title %}{{ post.title }}{% endblock %}
 {% block body %}
     {% include "blog/post.html" %}
+    <div id="comments_list">
+        <h3>Comments:</h3>
+        {% get_comment_list for post as comment_list %}
+        <ul>
+            {% for comment in comment_list %}
+                <li>
+                    <div class="comment_header">
+                        <p class="name">
+                            {% if comment.url %}
+                                <a href="{{ comment.url }}">{{ comment.name }}</a>
+                            {% else %}
+                                {{ comment.name }}
+                            {% endif %}
+                        </p>
+                        <p class="comment_date">{{ comment.submit_date }} </p>
+                    </div>
+                    <div class="comment_body">{{ comment.comment|linebreaks }} </div>
+                    <div class="clear"></div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div id="comment_form">
+        {% render_comment_form for post %}
+    </div>
 {% endblock %}

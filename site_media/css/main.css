@@ -7,6 +7,10 @@ body {
 	text-align:center;
 }
 
+.clear {
+	clear: both;
+}
+
 a {
 	text-decoration: none;
 }
@@ -52,22 +56,22 @@ div#menu li{
 	width: 6em;
 }
 div#menu li.current div.left_tab {
-	background: url("/site_media/images/layout/tab_left.png") no-repeat left top;
+	background: url("/site_media/images/layout/tab_left.png") no-repeat left 0px;
 	height: inherit
 }
 
 div#menu li.current div.right_tab{	
-	background: url("/site_media/images/layout/tab_right.png") no-repeat right top;
+	background: url("/site_media/images/layout/tab_right.png") no-repeat right 0px;
 	height: 35px;
 }
 
 div#menu li div.left_tab {
-	background: url("/site_media/images/layout/tab_left.png") no-repeat left bottom;
+	background: url("/site_media/images/layout/tab_left.png") no-repeat left -35px;
 	height: inherit
 }
 
 div#menu li div.right_tab{
-	background: url("/site_media/images/layout/tab_right.png") no-repeat right bottom;
+	background: url("/site_media/images/layout/tab_right.png") no-repeat right -35px;
 	height: 35px;
 }
 
@@ -100,13 +104,16 @@ div#main_body div#footer{
 	height: 100px;
 }
 
-div.post {
+div#body {
 	width: 748px;
+}
+
+div.post {
 	color: #494848;
 }
 
 /* Classes Using for Posts */
-div.post div.header {
+div.post div.header, div#comments_list h3 {
 	background-color: #d9d9d9;
 	font-weight: bold;
 	color: #494848;
@@ -134,7 +141,7 @@ div.post div.header .date_published {
 	font-size: .625em;
 }
 
-div.post div.header .comment_count{
+div.post div.header .comment_count a{
 	color:white;
 	position: absolute;
 	background: url("/site_media/images/layout/comment_bubble.png") no-repeat;
@@ -248,16 +255,57 @@ div#footer_background {
 div#footer_center{
 	background: #1B3340 url("/site_media/images/layout/footer_center.png") no-repeat;
 	width: 970px;
-	height: 43px;
 	margin: 0 auto;
 	padding-top: 40px;
 	color: #E6F4FB;
 	font-size: 0.875em;
 	position: relative;
+	min-height:76px;
 }
 
 div#footer_center p.django_badge {
 	position: absolute;
 	right:50px;
 	top: 42px;
+	display: block;
+}
+
+/* Comments */
+#comments_list {
+}
+
+div#comments_list h3 {
+	font-family:georgia,serif;
+	font-size:1.625em;
+}
+
+#comments_list li {
+	background-color: #E6F4FB;
+	margin: 6px;
+	padding: 6px;
+}
+
+#comments_list div.comment_header {
+	float: left;
+	width: 160px;
+}
+
+#comments_list p.comment_date {
+	font-size: 0.625em;
+}
+
+#comments_list div.comment_body {
+	color:#494848;
+	font-size:0.875em;
+	line-height:16px;
+}
+
+#comments_list div.comment_body p {
+	padding-bottom: 6px;
+	line-height: inherit;
+	margin-left: 160px;
+}
+
+div#comment_form {
+	background-color:#D9D9D9;
 }

@@ -78,6 +78,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.webdesign',
+    'django.contrib.comments',
     'django_blog.blog',
     'django_blog.profiles'
 )

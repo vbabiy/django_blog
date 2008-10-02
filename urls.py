@@ -11,11 +11,14 @@ site_media = os.path.join(
 )
 
 urlpatterns = patterns('',
-	# Images, Csss, etc...
+    # Images, Csss, etc...
     (r'site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': site_media }),
     
     # Blog
     (r'^blog/', include('django_blog.blog.urls')),
+    
+    # Comments
+    (r'^comments/', include('django.contrib.comments.urls')),
 
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/(.*)', admin.site.root),

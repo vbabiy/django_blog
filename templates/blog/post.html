@@ -1,8 +1,10 @@
+{% load comments %}
+{% get_comment_count for post as comment_count %}
 <div class="post">
     <div class="header">
         <h2><a class="title" href="{% url django_blog.blog.views.view_post post.id %}">{{ post.title }}</a></h2>
         <p class="date_published"> {{ post.date_published|date:"l, F jS, Y @ g:i A" }} \\ {{ post.created_by.username }}</p>
-        <p class="comment_count">25</p>
+        <p class="comment_count"><a href="{% url django_blog.blog.views.view_post post.id %}#comments_list">{{ comment_count }}</a></p>
     </div>
     <div class="post_body">
         {{ post.body|safe }}
