@@ -69,8 +69,9 @@
                 <div id="sidebar">
                     <h3>Categories</h3>
                     <ul>
-                        <li><a href="#">Python (10)</a></li>
-                        <li><a href="#">Django (24)</a></li>
+                        {% for category in categories %}
+                            <li><a href="#">{{ category.name }} ({{category.post_set.count }})</a></li>
+                        {% endfor %}
                     </ul>
                     <h3>Archives</h3>
                     <ul>
@@ -80,9 +81,9 @@
                     </ul>
                     <h3>Tag Cloud</h3>
                     <ul>
-                        <li><a href="#">Coding (100)</a></li>
-                        <li><a href="#">Linux-2008 (24)</a></li>
-                        <li><a href="#">Ubuntu-2008 (10)</a></li>
+                        {% for tag in tags %}
+                            <li><a href="#">{{ tag.name }} ({{tag.post_set.count }})</a></li>
+                        {% endfor %}
                     </ul>
                 </div>
                 <div id="body">

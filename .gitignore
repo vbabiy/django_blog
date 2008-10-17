@@ -1,3 +1,5 @@
 Django_Blog.kpf
 *.swp
 *.pyc
+django_blog.sql
+site_media/mugshots/*

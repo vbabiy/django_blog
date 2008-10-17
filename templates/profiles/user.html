@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}{{ user_view.first_name }} {{ user_view.last_name }}{% endblock %}
+{% block body %}
+    <p>{{ user_view.first_name }} {{ user_view.last_name }}</p>
+    <p><img src="{{ user_view.mugshot.url }}" /></p>
+{% endblock %}

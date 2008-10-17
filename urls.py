@@ -16,7 +16,11 @@ urlpatterns = patterns('',
     
     # Blog
     (r'^blog/', include('django_blog.blog.urls')),
-    
+
+    # Profiles
+    (r'^profiles/', include('django_blog.profiles.urls')),
+
+
     # Comments
     (r'^comments/', include('django.contrib.comments.urls')),
 
