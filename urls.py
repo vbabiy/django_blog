@@ -20,6 +20,8 @@ urlpatterns = patterns('',
     # Profiles
     (r'^profiles/', include('django_blog.profiles.urls')),
 
+    # Flat Pages
+    (r'^flat/', include('django.contrib.flatpages.urls')),
 
     # Comments
     (r'^comments/', include('django.contrib.comments.urls')),

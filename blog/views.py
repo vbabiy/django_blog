@@ -3,7 +3,7 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 
 def recent_post(request):
-    current_posts=Post.objects.order_by("-date_published").all()
+    current_posts=Post.objects.filter(status__exact=Post.LIVE_STATUS).order_by("-date_published").all()
     categories = Category.objects.order_by("name")
     tags = Tag.objects.order_by("name")
     

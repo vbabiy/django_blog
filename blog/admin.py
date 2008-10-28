@@ -2,7 +2,10 @@ from django.contrib import admin
 from django_blog.blog.models import Post, Category, Tag
 
 class PostAdmin(admin.ModelAdmin):
-    pass
+    prepopulated_fields = {
+        'slug': ('title',),
+    }
+
 
 class CategoryAdmin(admin.ModelAdmin):
     pass
