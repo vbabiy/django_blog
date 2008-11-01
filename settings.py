@@ -64,7 +64,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    # 'debug_toolbar.middleware.DebugToolbarMiddleware', # Django Debug Tool Bar
+    'debug_toolbar.middleware.DebugToolbarMiddleware', # Django Debug Tool Bar
 )
 
 ROOT_URLCONF = 'django_blog.urls'

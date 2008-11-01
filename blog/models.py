@@ -12,9 +12,16 @@ class Category(models.Model):
         
         def __unicode__(self):
                 return self.name
+            
+class Live(models.Manager):
+    """
+    Customer Manager to only return Live post
+    """
 
+    def get_query_set(self):
+        return super(Live, self).get_query_set().filter(status__exact=Post.LIVE_STATUS)
+    
 class Post(models.Model):
-        
         # Statuses
         LIVE_STATUS = 1
         DRAFT_STATUS = 2
@@ -39,7 +46,19 @@ class Post(models.Model):
         date_modifed = models.DateTimeField(auto_now_add=True)
         date_published = models.DateTimeField()
         
+        live = Live()
+        objects = models.Manager()
+        
+        @models.permalink
+        def get_absolute_url(self):
+                return('post_detail', (), {
+                    'year': self.date_published.strftime("%Y"),
+                    'month': self.date_published.strftime("%b").lower(),
+                    'day': self.date_published.strftime("%d"),
+                    'slug': self.slug })
         
         def __unicode__(self):
                 return self.title
-
+        
+        class Meta:
+                ordering = ['-date_published']

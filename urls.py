@@ -1,5 +1,4 @@
 from django.conf.urls.defaults import *
-from django_blog.blog.views import recent_post
 
 import os.path
 
@@ -15,7 +14,7 @@ urlpatterns = patterns('',
     (r'site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': site_media }),
     
     # Blog
-    (r'^blog/', include('django_blog.blog.urls')),
+    (r'^blog/', include('blog.urls.posts')),
 
     # Profiles
     (r'^profiles/', include('django_blog.profiles.urls')),

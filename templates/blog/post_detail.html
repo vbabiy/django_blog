@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% load comments %}
-{% block title %}{{ post.title }}{% endblock %}
+{% block title %}{{ object.title }}{% endblock %}
 {% block body %}
     {% include "blog/post.html" %}
     <div id="comments_list">
         <h3>Comments:</h3>
-        {% get_comment_list for post as comment_list %}
+        {% get_comment_list for object as comment_list %}
         <ul>
             {% for comment in comment_list %}
                 <li>
@@ -26,6 +26,6 @@
         </ul>
     </div>
     <div id="comment_form">
-        {% render_comment_form for post %}
+        {% render_comment_form for object %}
     </div>
 {% endblock %}
