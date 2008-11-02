@@ -1,4 +1,6 @@
 {% load webdesign %}
+{% load object_counts %}
+{% load date_counts %}
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -69,18 +71,21 @@
                 <div id="sidebar">
                     <h3>Categories</h3>
                     <ul>
+                        {% object_counts for blog.Category as categories %}
                         {% for category in categories %}
                             <li><a href="#">{{ category.name }} ({{category.post_set.count }})</a></li>
                         {% endfor %}
                     </ul>
                     <h3>Archives</h3>
                     <ul>
-                        <li><a href="#">July-2008 (100)</a></li>
-                        <li><a href="#">August-2008 (24)</a></li>
-                        <li><a href="#">September-2008 (24)</a></li>
+                        {% date_counts for blog.Post.date_published on month as dates %}
+                        {% for date in dates %}
+                            <li><a href="#">{{ date|date:"F Y" }}</a></li>
+                        {% endfor %}
                     </ul>
                     <h3>Tag Cloud</h3>
                     <ul>
+                        {% object_counts for blog.Tag as tags %}
                         {% for tag in tags %}
                             <li><a href="#">{{ tag.name }} ({{tag.post_set.count }})</a></li>
                         {% endfor %}
