@@ -1,15 +1,19 @@
 import os
-
 # Django settings for django_blog project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+#Email settings 
 ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+    ('Vitaly Babiy', 'vbabiy86@gmail.com'),
 )
 
 MANAGERS = ADMINS
+
+EMAIL_HOST = ''
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 
 DATABASE_ENGINE = 'mysql'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
 DATABASE_NAME = 'django_blog'             # Or path to database file if using sqlite3.
