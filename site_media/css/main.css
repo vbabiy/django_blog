@@ -309,3 +309,10 @@ div#comments_list h3 {
 div#comment_form {
 	background-color:#D9D9D9;
 }
+
+.category {
+	background-color:#1B3340;
+	color:white;
+	font-size:1.625em;
+	font-weight:bold;
+}

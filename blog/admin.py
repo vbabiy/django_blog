@@ -8,11 +8,14 @@ class PostAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    pass
+    prepopulated_fields = {
+        'slug': ('name',),
+    }
 
 class TagAdmin(admin.ModelAdmin):
-    pass
-
+    prepopulated_fields = {
+        'slug': ('name',),
+    }
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Category, CategoryAdmin)

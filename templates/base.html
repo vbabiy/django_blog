@@ -73,21 +73,21 @@
                     <ul>
                         {% object_counts for blog.Category as categories %}
                         {% for category in categories %}
-                            <li><a href="#">{{ category.name }} ({{category.post_set.count }})</a></li>
+                            <li><a href="{{ category.get_absolute_url }}">{{ category.name }} ({{category.post_set.count }})</a></li>
                         {% endfor %}
                     </ul>
                     <h3>Tag Cloud</h3>
                     <ul>
                         {% object_counts for blog.Tag as tags %}
                         {% for tag in tags %}
-                            <li><a href="#">{{ tag.name }} ({{tag.post_set.count }})</a></li>
+                            <li><a href="{{ tag.get_absolute_url }}">{{ tag.name }} ({{tag.post_set.count }})</a></li>
                         {% endfor %}
                     </ul>
                     <h3>Archives</h3>
                     <ul>
                         {% date_counts for blog.Post.date_published on month as dates %}
                         {% for date in dates %}
-                            <li><a href="#">{{ date|date:"F Y" }}</a></li>
+                            <li><a href="#">{{ date.date|date:"F Y" }} ({{ date.count }})</a></li>
                         {% endfor %}
                     </ul>
                 </div>

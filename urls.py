@@ -15,6 +15,12 @@ urlpatterns = patterns('',
     
     # Blog
     (r'^blog/', include('blog.urls.posts')),
+    
+    # Categories
+    (r'^categories/', include('blog.urls.categories')),
+    
+    # Tag
+    (r'^tag/', include('blog.urls.tags')),
 
     # Profiles
     (r'^profiles/', include('django_blog.profiles.urls')),
