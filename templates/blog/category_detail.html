@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Vitaly Babiy's Blog{% endblock %}
+{% block body %}
+    <h2 class="category"> {{ object.name }} </h2>
+    <div id="posts">
+        {{ object_list }}
+        {% for object in object.post_set.all %}
+            {% include "blog/post.html" %}
+        {% endfor %}
+    </div>
+{% endblock %}
