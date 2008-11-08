@@ -287,9 +287,12 @@ div#comments_list h3 {
 
 #comments_list div.comment_header {
 	float: left;
-	width: 160px;
+	width: 180px;
 }
 
+#comments_list div.comment_header p{
+	padding-top: 6px;
+}
 #comments_list p.comment_date {
 	font-size: 0.625em;
 }
@@ -306,10 +309,68 @@ div#comments_list h3 {
 	margin-left: 160px;
 }
 
-div#comment_form {
-	background-color:#D9D9D9;
+div#comment_form h3 {
+	font-family:georgia,serif;
+	font-size:1.625em;
+	font-weight: bold;
+	padding: 6px;
 }
 
+div#comment_form {
+	background-color:#D9D9D9;
+	color: #494848;
+}
+
+div#comment_form form {
+	padding-left:6px
+}
+
+div#comment_form p {
+	padding: 3px;
+	float: left;
+}
+
+div#comment_form input[type="text"]{
+	width: 358px;
+	border:1px solid #1B3340;
+	font-size: 1em;
+	font-family:georgia,serif;
+
+}
+
+div#comment_form input[type="text"]:focus, input[type="text"]:hover {
+	background-color: #E6F4FB;
+}
+
+div#comment_form input[type="text"]#id_url{
+	width: 724px;
+	border:1px solid #1B3340;
+	
+}
+
+div#comment_form textarea {
+	width: 724px;
+	border:1px solid #1B3340;
+	font-size: 1em;
+	font-family:georgia,serif;
+
+
+}
+
+div#comment_form textarea:focus, textarea:hover {
+	background-color: #E6F4FB;
+}
+div#comment_form p.submit {
+	float: none; 
+	clear: both;
+}
+
+div#comment_form p label{
+	display:block;
+	font-family:georgia,serif;
+	font-size:1.125em;
+	padding-bottom: 3px;
+}
 .category {
 	background-color:#1B3340;
 	color:white;

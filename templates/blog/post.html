@@ -12,7 +12,7 @@
     </div>
     <div class="post_tags">
         {% for tag in object.tags.all %}
-            <a href="#">{{ tag.name }}</a>
+            <a href="{{ tag.get_absolute_url }}">{{ tag.name }}</a>
         {% endfor %}
     </div>
 </div>

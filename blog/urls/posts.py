@@ -34,10 +34,7 @@ urlpatterns = patterns('django.views.generic.date_based',
     
     # Display Post
     url(r'^(?P<year>(\d){4})/(?P<month>(\w){3})/(?P<day>(\d){2})/(?P<slug>[-\w]+)/$', 'object_detail', display_dict, name="post_detail"),
-    
-    # Daily Archive
-    url(r'^(?P<year>(\d){4})/(?P<month>(\w){3})/(?P<day>(\d){2})/$', 'archive_day', { 'queryset': Post.objects.all(), 'date_field': 'date_published', 'template_name': 'blog/post_archive.html', 'template_object_name':'post' }, name="post_day" ),
-    
+        
     # Monthly Archive
     url(r'^(?P<year>(\d){4})/(?P<month>(\w){3})/$', 'archive_month', month_dict, name="post_month" ),
     

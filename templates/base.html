@@ -87,7 +87,7 @@
                     <ul>
                         {% date_counts for blog.Post.date_published on month as dates %}
                         {% for date in dates %}
-                            <li><a href="#">{{ date.date|date:"F Y" }} ({{ date.count }})</a></li>
+                            <li><a href="{% url post_month date.date.year,date.date|date:"b" %}">{{ date.date|date:"F Y" }} ({{ date.count }})</a></li>
                         {% endfor %}
                     </ul>
                 </div>
