@@ -15,6 +15,15 @@ a {
 	text-decoration: none;
 }
 
+h3 {
+	font-family:georgia,serif;
+	font-size:1.625em;
+	font-weight: bold;
+	padding: 6px;
+	color:#494848;
+	background-color:#D9D9D9;
+}
+
 div#body_wrapper {
 	margin: 0 auto;
 	width: 970px;
@@ -55,6 +64,7 @@ div#menu li{
 	float: left;
 	width: 6em;
 }
+
 div#menu li.current div.left_tab {
 	background: url("/site_media/images/layout/tab_left.png") no-repeat left 0px;
 	height: inherit
@@ -220,7 +230,7 @@ div#sidebar {
 	text-align: right;
 }
 
-div#sidebar h3 {
+div#sidebar h2 {
 	font-weight: bold;
 	text-align: inherit;
 	color: #494848;
@@ -271,9 +281,6 @@ div#footer_center p.django_badge {
 }
 
 /* Comments */
-#comments_list {
-}
-
 div#comments_list h3 {
 	font-family:georgia,serif;
 	font-size:1.625em;
@@ -306,7 +313,22 @@ div#comments_list h3 {
 #comments_list div.comment_body p {
 	padding-bottom: 6px;
 	line-height: inherit;
-	margin-left: 160px;
+	margin-left: 180px;
+}
+
+.comment_preview {
+	background-color: #E6F4FB;
+	margin: 6px;
+	padding: 6px;
+	line-height: inherit;
+	color:#494848;
+	font-size:0.875em;
+	line-height:16px;
+}
+
+.comment_preview p {
+	padding-bottom: 6px;
+	line-height: inherit;
 }
 
 div#comment_form h3 {
@@ -371,9 +393,13 @@ div#comment_form p label{
 	font-size:1.125em;
 	padding-bottom: 3px;
 }
-.category {
+h2.category {
 	background-color:#1B3340;
 	color:white;
 	font-size:1.625em;
 	font-weight:bold;
+	font-family:sans-serif;
+	padding: 6px;
+	margin-bottom: 6px;
+	text-align: right;
 }

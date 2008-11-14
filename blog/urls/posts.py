@@ -11,6 +11,7 @@ display_dict = {
     'queryset': Post.live.all(),
     'date_field': 'date_published',
     'template_name': 'blog/post_detail.html',
+    'extra_context': { 'post_display' : True },
 }
 
 month_dict = {

@@ -8,7 +8,12 @@
         <p class="comment_count"><a href="{{ object.get_absolute_url }}#comments_list">{{ comment_count }}</a></p>
     </div>
     <div class="post_body">
-        {{ object.body|safe }}
+        {% if post_display %}
+            {{ object.body|safe }}
+        {% else %}
+            {{ object.body|safe|truncatewords_html:150 }}
+            <a href="{{ object.get_absolute_url }}"> Continue Reading... </a>
+        {% endif %}
     </div>
     <div class="post_tags">
         {% for tag in object.tags.all %}

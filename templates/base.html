@@ -1,8 +1,7 @@
-{% load webdesign %}
-{% load object_counts %}
-{% load date_counts %}
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+{% load object_counts %}
+{% load date_counts %}
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <title>{% block title %}{% endblock %}</title>
@@ -11,9 +10,9 @@
     
     <!-- Sytanx Highlighter -->
     <link type="text/css" rel="stylesheet" href="/site_media/css/syntax_highlighter/SyntaxHighlighter.css"></link>
-    <script language="javascript" src="/site_media/js/syntax_highlighter/shCore.js"></script>
-    <script language="javascript" src="/site_media/js/syntax_highlighter/shBrushCss.js"></script>
-    <script language="javascript" src="/site_media/js/syntax_highlighter/shBrushPython.js"></script>
+    <script type="text/javascript" src="/site_media/js/syntax_highlighter/shCore.js"></script>
+    <script type="text/javascript" src="/site_media/js/syntax_highlighter/shBrushCss.js"></script>
+    <script type="text/javascript" src="/site_media/js/syntax_highlighter/shBrushPython.js"></script>
 </head>
 <body>
     <div id="body_wrapper">
@@ -40,6 +39,7 @@
                         </div>
                     </div>
                 </li>
+                <!--
                 <li>
                     <div class="right_tab">
                         <div class="left_tab">
@@ -53,7 +53,7 @@
                             <a href="#">Portfolio</a>
                         </div>
                     </div>
-                </li>
+                </li>    
                 <li id="rss_feed_tab">
                     <div class="right_tab">
                         <div class="left_tab">
@@ -61,6 +61,7 @@
                         </div>
                     </div>
                 </li>
+                -->
             </ul>
         </div>
         
@@ -69,21 +70,21 @@
             <div id="content_header"></div>
             <div id="wrapper">
                 <div id="sidebar">
-                    <h3>Categories</h3>
+                    <h2>Categories</h2>
                     <ul>
                         {% object_counts for blog.Category as categories %}
                         {% for category in categories %}
                             <li><a href="{{ category.get_absolute_url }}">{{ category.name }} ({{category.post_set.count }})</a></li>
                         {% endfor %}
                     </ul>
-                    <h3>Tag Cloud</h3>
+                    <h2>Tag Cloud</h2>
                     <ul>
                         {% object_counts for blog.Tag as tags %}
                         {% for tag in tags %}
                             <li><a href="{{ tag.get_absolute_url }}">{{ tag.name }} ({{tag.post_set.count }})</a></li>
                         {% endfor %}
                     </ul>
-                    <h3>Archives</h3>
+                    <h2>Archives</h2>
                     <ul>
                         {% date_counts for blog.Post.date_published on month as dates %}
                         {% for date in dates %}
@@ -94,6 +95,7 @@
                 <div id="body">
                     {% block body %} {% endblock %}
                 </div>
+                <div class="clear"></div>
              </div>
         </div>
     </div>
@@ -105,11 +107,11 @@
                 &copy; 2008 Vitaly Babiy’s Blog | Designed and Developed by Vitaly Babiy.
             </p>
             <p class="django_badge">
-                <a href="http://www.djangoproject.com/"><img src="http://media.djangoproject.com/img/badges/djangomade124x25_grey.gif" border="0" alt="Made with Django." title="Made with Django." /></a>
+                <a href="http://www.djangoproject.com/"><img src="http://media.djangoproject.com/img/badges/djangomade124x25_grey.gif" alt="Made with Django." title="Made with Django." /></a>
             </p>
         </div>
     </div>
-    <script language="javascript">
+    <script type="text/javascript">
         dp.SyntaxHighlighter.ClipboardSwf = '/site_media/js/syntax_highlighter/clipboard.swf';
         dp.SyntaxHighlighter.HighlightAll('code');
     </script>

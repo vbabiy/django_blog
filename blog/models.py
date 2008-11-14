@@ -1,5 +1,8 @@
 from django.db import models
 from django_blog.profiles.models import User
+from django.contrib.comments.signals import comment_will_be_posted
+from django.contrib.comments.models import Comment
+from markdown import markdown
 
 class Tag(models.Model):
         name=models.CharField(max_length=255)
@@ -58,7 +61,7 @@ class Post(models.Model):
         categories = models.ManyToManyField(Category)
         tags = models.ManyToManyField(Tag)
         
-        date_crated = models.DateTimeField(auto_now=True, editable=False)
+        date_created = models.DateTimeField(auto_now=True, editable=False)
         date_modifed = models.DateTimeField(auto_now_add=True, editable=False)
         date_published = models.DateTimeField(editable=False)
         
@@ -85,3 +88,15 @@ class Post(models.Model):
         def __unicode__(self):
                 return self.title
         
+        
+# Signals
+def pre_save_comment(sender, **kargs):
+    """
+    Run comment through a markdown filter
+    """
+    if 'comment' in kargs:
+        comment = kargs['comment']
+        comment.comment = markdown(comment.comment)
+    
+    
+comment_will_be_posted.connect(pre_save_comment, Comment)

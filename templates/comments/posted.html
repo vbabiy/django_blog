@@ -3,5 +3,5 @@
 {% block title %}Thanks for commenting.{% endblock %}
 
 {% block body %}
-  <h1>Thank you for your comment.</h1>
+  <h3>Thank you for your comment. <a href="{{ comment.content_object.get_absolute_url }}#comments_list"> Go Back </a></h3>
 {% endblock %}

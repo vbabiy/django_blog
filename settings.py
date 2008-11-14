@@ -89,6 +89,7 @@ INSTALLED_APPS = (
     'django.contrib.webdesign',
     'django.contrib.comments',
     'django.contrib.flatpages',
+    'django.contrib.markup',
     'django_blog.blog',
     'django_blog.profiles',
     'debug_toolbar',

@@ -21,7 +21,7 @@
                         </p>
                         <p class="comment_date">{{ comment.submit_date }} </p>
                     </div>
-                    <div class="comment_body">{{ comment.comment|linebreaks }} </div>
+                    <div class="comment_body">{{ comment.comment|safe }} </div>
                     <div class="clear"></div>
                 </li>
             {% endfor %}
