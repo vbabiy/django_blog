@@ -102,7 +102,6 @@ div#menu li#rss_feed_tab {
 div#main_body div#content_header {
 	background: url("/site_media/images/layout/body_top.png") no-repeat left top;
 	height: 36px;
-	clear: both;
 }
 div#main_body div#wrapper {
 	background: url("/site_media/images/layout/wrapper_background.png") repeat-y left top;
@@ -151,7 +150,7 @@ div.post div.header .date_published {
 	font-size: .625em;
 }
 
-div.post div.header .comment_count a{
+.comment_count a{
 	color:white;
 	position: absolute;
 	background: url("/site_media/images/layout/comment_bubble.png") no-repeat;
@@ -163,6 +162,7 @@ div.post div.header .comment_count a{
 	font-weight: bold;
 	padding: 13px 10px 13px 5px;
 	text-align: center;
+	z-index: 1;	
 }
 
 div.post div.post_body {
@@ -225,7 +225,7 @@ div.post div.post_tags a:hover {
 /* Sidebar */
 div#sidebar {
 	float:right;
-	width: 190px;
+	width: 196px;
 	padding-right: 15px;
 	text-align: right;
 }
@@ -234,9 +234,10 @@ div#sidebar h2 {
 	font-weight: bold;
 	text-align: inherit;
 	color: #494848;
-	border-bottom:1px dashed;
+	border-bottom:1px dotted;
 	margin: 12px 0px 2px;
 	text-transform: uppercase;
+	padding-bottom: 1px;
 }
 
 div#sidebar li {
@@ -281,24 +282,29 @@ div#footer_center p.django_badge {
 }
 
 /* Comments */
+#comments_list {
+	position: relative;
+}
 div#comments_list h3 {
 	font-family:georgia,serif;
 	font-size:1.625em;
 }
 
 #comments_list li {
-	background-color: #E6F4FB;
-	margin: 6px;
-	padding: 6px;
+	border-bottom:6px solid #D9D9D9;
+	border-left:2px solid #D9D9D9;
+	border-top:2px solid #D9D9D9;
+	margin:6px 0 6px 6px;
 }
 
 #comments_list div.comment_header {
 	float: left;
-	width: 180px;
+	width: 154px;
+	padding: 6px;
 }
 
 #comments_list div.comment_header p{
-	padding-top: 6px;
+	padding: 1.5px;
 }
 #comments_list p.comment_date {
 	font-size: 0.625em;
@@ -308,12 +314,13 @@ div#comments_list h3 {
 	color:#494848;
 	font-size:0.875em;
 	line-height:16px;
+	padding: 6px;
 }
 
 #comments_list div.comment_body p {
 	padding-bottom: 6px;
 	line-height: inherit;
-	margin-left: 180px;
+	margin-left: 160px;
 }
 
 .comment_preview {
@@ -360,8 +367,8 @@ div#comment_form input[type="text"]{
 
 }
 
-div#comment_form input[type="text"]:focus, input[type="text"]:hover {
-	background-color: #E6F4FB;
+div#comment_form input[type="text"]:focus {
+	background-color: #f2f2f2;
 }
 
 div#comment_form input[type="text"]#id_url{
@@ -375,12 +382,11 @@ div#comment_form textarea {
 	border:1px solid #1B3340;
 	font-size: 1em;
 	font-family:georgia,serif;
-
-
+	height: 160px;
 }
 
-div#comment_form textarea:focus, textarea:hover {
-	background-color: #E6F4FB;
+div#comment_form textarea:focus {
+	background-color: #f2f2f2	;
 }
 div#comment_form p.submit {
 	float: none; 

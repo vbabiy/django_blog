@@ -3,8 +3,14 @@
 <div class="post">
     <div class="header">
         <h2><a class="title" href="{{ object.get_absolute_url }}">{{ object.title }}</a></h2>
-        <p class="date_published"> {{ object.date_published|date:"l, F jS, Y @ g:i A" }} \\
-        <a href="">{{ object.created_by.username }}</a></p>
+        <p class="date_published"> 
+			{{ object.date_published|date:"l, F jS, Y @ g:i A" }} \\
+			{% if object.created_by.get_profile %}
+       	 		<a href="{{ object.created_by.get_profile.get_absolute_url }}">{{ object.created_by.username }}</a>
+			{% else %}
+				{{ object.created_by.username }}
+			{% endif %}
+		</p>
         <p class="comment_count"><a href="{{ object.get_absolute_url }}#comments_list">{{ comment_count }}</a></p>
     </div>
     <div class="post_body">

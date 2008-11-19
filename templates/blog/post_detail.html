@@ -6,6 +6,8 @@
     <div id="comments_list">
         {% get_comment_list for object as comment_list %}
         {% if comment_list %}
+            {% get_comment_count for object as comment_count %}
+            <p class="comment_count"><a href="#comments_list">{{ comment_count }}</a></p>
             <h3 class="comment_header">Comments:</h3>
         {% endif %}
         <ul>
@@ -19,7 +21,7 @@
                                 {{ comment.name }}
                             {% endif %}
                         </p>
-                        <p class="comment_date">{{ comment.submit_date }} </p>
+                        <p class="comment_date">{{ comment.submit_date|date:"n/j/y @ g:i A" }} </p>
                     </div>
                     <div class="comment_body">{{ comment.comment|safe }} </div>
                     <div class="clear"></div>

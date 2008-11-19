@@ -1,5 +1,12 @@
 from django.db import models
-from django.contrib.auth import models as auth_models
+from django.contrib.auth.models import User
 
-class User(auth_models.User):
-    mugshot=models.ImageField(upload_to='mugshots/')
+class Profile(models.Model):
+	mugshot=models.ImageField(upload_to='mugshots/')
+	user = models.ForeignKey(User, unique=True)
+
+	def __unicode__(self):
+		return self.user.username
+
+	def get_absolute_url(self):
+		return "/profiles/%s/" % self.user.username

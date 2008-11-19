@@ -68,7 +68,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware', # Django Debug Tool Bar
+#    'debug_toolbar.middleware.DebugToolbarMiddleware', # Django Debug Tool Bar
 )
 
 ROOT_URLCONF = 'django_blog.urls'
@@ -97,3 +97,6 @@ INSTALLED_APPS = (
 DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS' : False
 }
+
+AUTH_PROFILE_MODULE	 = 'profiles.profile'
+ABOUT_ME_USER_ID = 1

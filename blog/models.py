@@ -1,8 +1,9 @@
 from django.db import models
-from django_blog.profiles.models import User
 from django.contrib.comments.signals import comment_will_be_posted
 from django.contrib.comments.models import Comment
 from markdown import markdown
+from django.contrib.auth.models import User
+
 
 class Tag(models.Model):
         name=models.CharField(max_length=255)
@@ -34,7 +35,7 @@ class Category(models.Model):
      
 class Live(models.Manager):
     """
-    Customer Manager to only return Live post
+    Customer Manager that is aware of Post statues
     """
 
     def get_query_set(self):

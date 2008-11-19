@@ -1,7 +1,7 @@
 from django.contrib import admin
-from django_blog.profiles.models import User
+from django_blog.profiles.models import Profile
 
-class UserAdmin(admin.ModelAdmin):
+class ProfileAdmin(admin.ModelAdmin):
     pass
 
-admin.site.register(User, UserAdmin)
+admin.site.register(Profile, ProfileAdmin)
