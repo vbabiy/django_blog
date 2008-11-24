@@ -22,6 +22,7 @@ def create_user(request):
 			return HttpResponseRedirect(profile.get_absolute_url())
 	else:
 		create_form = UserCreationForm()
+
 	
 	return render_to_response("profiles/create_user.html", { 'form': create_form })
 

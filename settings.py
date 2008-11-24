@@ -93,6 +93,8 @@ INSTALLED_APPS = (
     'django_blog.blog',
     'django_blog.profiles',
     'debug_toolbar',
+	'extensions',
+
 )
 DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS' : False

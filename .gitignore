@@ -3,3 +3,4 @@ Django_Blog.kpf
 *.pyc
 django_blog.sql
 site_media/mugshots/*
+nbproject
