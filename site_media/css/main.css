@@ -65,12 +65,12 @@ div#menu li{
 	width: 6em;
 }
 
-div#menu li.current div.left_tab {
+body.home div#menu li.home div.left_tab, body.profile div#menu li.profile div.left_tab {
 	background: url("/site_media/images/layout/tab_left.png") no-repeat left 0px;
 	height: inherit
 }
 
-div#menu li.current div.right_tab{	
+body.home div#menu li.home div.right_tab, body.profile div#menu li.profile div.right_tab {
 	background: url("/site_media/images/layout/tab_right.png") no-repeat right 0px;
 	height: 35px;
 }

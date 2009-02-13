@@ -15,7 +15,7 @@
     <script type="text/javascript" src="/site_media/js/syntax_highlighter/shBrushCss.js"></script>
     <script type="text/javascript" src="/site_media/js/syntax_highlighter/shBrushPython.js"></script>
 </head>
-<body>
+<body class={% block tab %}home{% endblock %}>
     <div id="body_wrapper">
         <!-- Header -->
         <div id="header">
@@ -26,14 +26,14 @@
         <!-- Menu -->
         <div id="menu">
             <ul>
-                <li class="current">
+                <li class="home">
                     <div class="right_tab">
                         <div class="left_tab">
                             <a href="{% url blog_post_archive_list %}">Home</a>
                         </div>
                     </div>
                 </li>
-                <li class="">
+                <li class="profile">
                     <div class="right_tab">
                         <div class="left_tab">
 							{% about_me %}

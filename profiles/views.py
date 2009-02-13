@@ -27,8 +27,6 @@ def create_user(request):
 	return render_to_response("profiles/create_user.html", { 'form': create_form })
 
 def display_profile(request, username):
-	assert False
-
 	user = get_object_or_404(User, username=username)
 	return render_to_response("profiles/profile_show.html", { 'profile': user.get_profile() })
 

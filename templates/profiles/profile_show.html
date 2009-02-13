@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block title %}{{ profile.user.first_name }} {{ profile.user.last_name }}{% endblock %}
+{% block tab %}profile{% endblock %}
 {% block body %}
     <p>{{ profile.user.username}}</p>
 	{% if profile.mugshot %}
