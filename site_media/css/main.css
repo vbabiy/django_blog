@@ -109,7 +109,6 @@ div#menu li#rss_feed_tab {
 	right: 217.5px;
 	width: 50px;
 	position: absolute;
-	display:none;
 }
 div#main_body div#content_header {
 	background: url("/site_media/images/layout/body_top.png") no-repeat left top;

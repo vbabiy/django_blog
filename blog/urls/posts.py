@@ -1,7 +1,9 @@
 from django.conf.urls.defaults import *
 from django_blog.blog.models import Post
+from django_blog.blog.feeds import LatestPosts
 
 index_dict = {
+    'num_latest': 2,
     'queryset': Post.live.all(),
     'date_field': 'date_published',
     'template_object_name': 'post_list',
@@ -29,6 +31,10 @@ year_dict = {
     'make_object_list': True
 }
 
+feeds = {
+    'latest': LatestPosts,
+}
+
 urlpatterns = patterns('django.views.generic.date_based',
     # Post List
     url(r'^$', 'archive_index', index_dict, 'blog_post_archive_list'),
@@ -41,5 +47,10 @@ urlpatterns = patterns('django.views.generic.date_based',
     
     # Yearly Archive
     (r'^(?P<year>(\d){4})/$', 'archive_year', year_dict, "post_year" ),
-
+    
 )
+
+urlpatterns += patterns('',
+    url(r'^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': feeds}, name='feeds'),
+)
+

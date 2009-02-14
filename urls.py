@@ -10,8 +10,6 @@ site_media = os.path.join(
 )
 
 urlpatterns = patterns('',
-    # Images, Csss, etc...
-    (r'site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': site_media }),
     
     # Blog
     (r'^', include('blog.urls.posts')),
@@ -34,3 +32,10 @@ urlpatterns = patterns('',
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/(.*)', admin.site.root),
 )
+
+from django.conf import settings
+if settings.DEBUG:
+    urlpatterns += patterns('',
+	    # Images, Css, etc...
+	    (r'site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': site_media }),
+    )
