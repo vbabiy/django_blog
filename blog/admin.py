@@ -16,7 +16,7 @@ class PostAdmin(admin.ModelAdmin):
     }
     date_hierarchy = 'date_published'
     list_display = ('title', 'status', author , 'date_created', 'date_modified', 'date_published', tags, categories)
-    list_filter = ('tags', 'categories')
+    list_filter = ('status', 'tags', 'categories')
     search_fields = ('title', 'body')
     exclude = ('author',)
     
