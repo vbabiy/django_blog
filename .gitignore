@@ -5,3 +5,4 @@ django_blog.sql
 site_media/mugshots/*
 nbproject
 *.class
+settings.py

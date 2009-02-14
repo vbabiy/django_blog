@@ -31,7 +31,7 @@ div#body_wrapper {
 }
 div#header {
 	color: white;
-	background: url("/site_media/images/layout/beta_badge.png") no-repeat 407px 33px;
+	background: url("/site_media/images/layout/beta_badge.png") no-repeat 150px 33px;
 	height: 107px;
 	position: relative;
 }
@@ -364,6 +364,7 @@ div#comment_form input[type="text"]{
 	border:1px solid #1B3340;
 	font-size: 1em;
 	font-family:georgia,serif;
+	background: #fff url(/site_media/images/layout/field_bg.gif) repeat-x top center;
 
 }
 

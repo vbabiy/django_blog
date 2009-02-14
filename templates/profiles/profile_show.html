@@ -2,8 +2,17 @@
 {% block title %}{{ profile.user.first_name }} {{ profile.user.last_name }}{% endblock %}
 {% block tab %}profile{% endblock %}
 {% block body %}
-    <p>{{ profile.user.username}}</p>
-	{% if profile.mugshot %}
-    	<p><img src="{{ profile.mugshot.url }}" /></p>
-	{% endif %}
+   <p>Comming Soon</p>
+   
 {% endblock %}
+    <h1>{{ profile.user.get_full_name }}</h1>
+   {% if profile.mugshot %}
+        <div class="photo">
+           <p><img src="{{ profile.mugshot.url }}" alt="{{ profile.user.get_full_name }}" width="160" height="120" /></p>
+        </div>
+   {% endif %}
+   <div>
+      {% load webdesign %}
+      {% lorem 4 p %}
+   </div>
+

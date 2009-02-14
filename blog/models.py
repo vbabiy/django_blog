@@ -28,6 +28,7 @@ class Category(models.Model):
             
         class Meta:
             ordering = ['name']
+            verbose_name_plural = "categories"
         
         @models.permalink
         def get_absolute_url(self):
@@ -57,13 +58,13 @@ class Post(models.Model):
         slug = models.SlugField(unique_for_date="date_published")
         body = models.TextField()
         status = models.IntegerField(choices=statuses)        
-        created_by = models.ForeignKey(User)
+        author = models.ForeignKey(User)
 
         categories = models.ManyToManyField(Category)
         tags = models.ManyToManyField(Tag)
         
         date_created = models.DateTimeField(auto_now=True, editable=False)
-        date_modifed = models.DateTimeField(auto_now_add=True, editable=False)
+        date_modified = models.DateTimeField(auto_now_add=True, editable=False)
         date_published = models.DateTimeField(editable=False)
         
         # manager

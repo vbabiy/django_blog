@@ -5,10 +5,10 @@
         <h2><a class="title" href="{{ object.get_absolute_url }}">{{ object.title }}</a></h2>
         <p class="date_published"> 
 			{{ object.date_published|date:"l, F jS, Y @ g:i A" }} \\
-			{% if object.created_by.get_profile %}
-       	 		<a href="{{ object.created_by.get_profile.get_absolute_url }}">{{ object.created_by.username }}</a>
+			{% if object.author.get_profile %}
+       	 		<a href="{{ object.author.get_profile.get_absolute_url }}">{{ object.author.get_full_name }}</a>
 			{% else %}
-				{{ object.created_by.username }}
+				{{ object.author.get_full_name }}
 			{% endif %}
 		</p>
         <p class="comment_count"><a href="{{ object.get_absolute_url }}#comments_list">{{ comment_count }}</a></p>
