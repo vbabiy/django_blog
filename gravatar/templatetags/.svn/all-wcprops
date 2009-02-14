@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/9/trunk/gravatar/templatetags
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2/trunk/gravatar/templatetags/__init__.py
+END
+gravatar_tags.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/9/trunk/gravatar/templatetags/gravatar_tags.py
+END
+gravatar.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/9/trunk/gravatar/templatetags/gravatar.py
+END

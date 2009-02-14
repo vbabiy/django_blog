@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load comments %}
+{% load gravatar %}
 {% block title %}{{ object.title }}{% endblock %}
 {% block body %}
     {% include "blog/post.html" %}
@@ -14,6 +15,10 @@
             {% for comment in comment_list %}
                 <li>
                     <div class="comment_header">
+                        <div class="image">
+                            {% gravatar_for_email comment.user_email 80 %}
+                        </div>
+                        
                         <p class="name">
                             {% if comment.url %}
                                 <a href="{{ comment.url }}">{{ comment.name }}</a>
