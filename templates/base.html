@@ -7,13 +7,19 @@
 <head>
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="/site_media/css/main.css" media="all"/>
-   <!--  <script src="/site_media/js/typography/syncotype.js" type="text/javascript"></script> -->
-    
     <!-- Sytanx Highlighter -->
     <link type="text/css" rel="stylesheet" href="/site_media/css/syntax_highlighter/SyntaxHighlighter.css"></link>
     <script type="text/javascript" src="/site_media/js/syntax_highlighter/shCore.js"></script>
     <script type="text/javascript" src="/site_media/js/syntax_highlighter/shBrushCss.js"></script>
     <script type="text/javascript" src="/site_media/js/syntax_highlighter/shBrushPython.js"></script>
+    
+   <!--[if IE 6]>
+      <script type="text/javascript" src="/site_media/js/DD_belatedPNG_0.0.7a-min.js"></script>
+      <script>
+          DD_belatedPNG.fix('.comment_count a');
+          DD_belatedPNG.fix('div.post div.post_tags');
+      </script>
+   <![endif]--> 
 </head>
 <body class={% block tab %}home{% endblock %}>
     <div id="body_wrapper">

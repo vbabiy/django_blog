@@ -3,7 +3,7 @@
 /* Main CSS */
 body {
 	background: #5eb4e2 url("/site_media/images/layout/background.png") repeat-x left top;
-	font-family: verdana, "trebuchet MS", helvetica, sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
 	text-align:center;
 }
 
@@ -12,7 +12,12 @@ body {
 }
 
 a {
+   color: #1b3340;
 	text-decoration: none;
+}
+
+a:hover {
+	color: #5eb4e2;
 }
 
 h3 {
@@ -31,13 +36,19 @@ div#body_wrapper {
 }
 div#header {
 	color: white;
-	background: url("/site_media/images/layout/beta_badge.png") no-repeat 150px 33px;
+/*	background: url("/site_media/images/layout/beta_badge.png") no-repeat 150px 33px;*/
 	height: 107px;
 	position: relative;
 }
 
 div#header h1 {
+   padding-top: 26px;
 	font-size: 2em;
+   font-style: normal;
+   font-weight: bold;
+   text-transform: normal;
+   letter-spacing: -2px;
+   line-height: 1.2em;
 }
 
 div#header p.date_time {
@@ -98,6 +109,7 @@ div#menu li#rss_feed_tab {
 	right: 217.5px;
 	width: 50px;
 	position: absolute;
+	display:none;
 }
 div#main_body div#content_header {
 	background: url("/site_media/images/layout/body_top.png") no-repeat left top;
@@ -142,9 +154,6 @@ div.post h2 a.title {
 	font-family: georgia, serif;
 }
 
-div.post h2 a.title:hover {
-	color: #5eb4e2;
-}
 
 div.post div.header .date_published {
 	font-size: .625em;
@@ -154,15 +163,15 @@ div.post div.header .date_published {
 	color:white;
 	position: absolute;
 	background: url("/site_media/images/layout/comment_bubble.png") no-repeat;
-	width:42px;
+	width:52px;
 	height: 47px;
 	top: 18px;
 	left: 726px;
 	font-size: 1em;
 	font-weight: bold;
-	padding: 13px 10px 13px 5px;
+	padding-top: 14px;
 	text-align: center;
-	z-index: 1;	
+	z-index: 99999;
 }
 
 div.post div.post_body {
@@ -232,7 +241,7 @@ div#sidebar {
 
 div#sidebar h2 {
 	font-weight: bold;
-	text-align: inherit;
+	text-align: right;
 	color: #494848;
 	border-bottom:1px dotted;
 	margin: 12px 0px 2px;
@@ -364,8 +373,7 @@ div#comment_form input[type="text"]{
 	border:1px solid #1B3340;
 	font-size: 1em;
 	font-family:georgia,serif;
-	background: #fff url(/site_media/images/layout/field_bg.gif) repeat-x top center;
-
+	background: #fff 	url(/site_media/images/layout/field_bg.gif) repeat-x top center;
 }
 
 div#comment_form input[type="text"]:focus {
