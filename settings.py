@@ -74,7 +74,7 @@ INSTALLED_APPS = (
     'django_blog.blog',
     'django_blog.profiles',
     'debug_toolbar',
-    'extensions',
+#    'extensions',
     'gravatar'
 
 )

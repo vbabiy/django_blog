@@ -323,6 +323,11 @@ div#comments_list h3 {
 #comments_list div.comment_header p{
 	padding: 1.5px;
 }
+
+#comments_list div.image img {
+    border: 3px solid #d9d9d9;
+}
+
 #comments_list p.comment_date {
 	font-size: 0.625em;
 }
@@ -415,6 +420,8 @@ div#comment_form p label{
 	font-size:1.125em;
 	padding-bottom: 3px;
 }
+
+
 h2.category {
 	background-color:#1B3340;
 	color:white;
