@@ -7,6 +7,7 @@
 <head>
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="/site_media/css/main.css" media="all"/>
+    <link href="{% url feeds "latest" %}" type="application/rss+xml" rel="alternate" title="Latest Posts" />
     <!-- Sytanx Highlighter -->
     <link type="text/css" rel="stylesheet" href="/site_media/css/syntax_highlighter/SyntaxHighlighter.css"></link>
     <script type="text/javascript" src="/site_media/js/syntax_highlighter/shCore.js"></script>
@@ -25,7 +26,7 @@
     <div id="body_wrapper">
         <!-- Header -->
         <div id="header">
-            <h1>Vitaly Babiy's Blog</h1>
+            <h1><a href="{% url blog_post_archive_list %}">Vitaly Babiy's Blog</a></h1>
             <p class="date_time">{% now "l, F jS" %}</p>
         </div>
         

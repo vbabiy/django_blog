@@ -51,6 +51,15 @@ div#header h1 {
    line-height: 1.2em;
 }
 
+div#header h1 a {
+    color: #fff;
+    font-weight: bold;
+}
+
+div#header h1 a:hover {
+	color: #5eb4e2;
+}
+
 div#header p.date_time {
 	font-family:georgia,serif;
 	font-size:.75em;
@@ -372,7 +381,6 @@ div#comment_form input[type="text"]{
 	border:1px solid #1B3340;
 	font-size: 1em;
 	font-family:georgia,serif;
-	background: #fff 	url(/site_media/images/layout/field_bg.gif) repeat-x top center;
 }
 
 div#comment_form input[type="text"]:focus {
