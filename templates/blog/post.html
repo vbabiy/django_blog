@@ -23,7 +23,6 @@
                     {{ object.body|safe|truncatewords_html:150 }}
                     <a href="{{ object.get_absolute_url }}"> Continue Reading... </a>
                 {% else %}
-                    tests
                     {{ object.body|safe }}
                     <a href="{{ object.get_absolute_url }}"> Read Comments({{ comment_count }})</a>
                 {% endif_greater %}
