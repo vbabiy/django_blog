@@ -95,3 +95,6 @@ DEBUG_TOOLBAR_CONFIG = {
 
 AUTH_PROFILE_MODULE	 = 'profiles.profile'
 ABOUT_ME_USER_ID = 1
+
+# Get system_settings
+from  system_settings import *
