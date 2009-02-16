@@ -3,10 +3,8 @@ from django_blog.blog.models import Post
 from django_blog.blog.feeds import LatestPosts
 
 index_dict = {
-    'num_latest': 2,
-    'queryset': Post.live.all(),
-    'date_field': 'date_published',
-    'template_object_name': 'post_list',
+    'queryset': Post.live.order_by('-date_published'),
+    'template_object_name': 'post',
 }
 
 display_dict = {
@@ -35,9 +33,11 @@ feeds = {
     'latest': LatestPosts,
 }
 
-urlpatterns = patterns('django.views.generic.date_based',
+urlpatterns = patterns ('django.views.generic.list_detail',
     # Post List
-    url(r'^$', 'archive_index', index_dict, 'blog_post_archive_list'),
+    url(r'^$', 'object_list', index_dict, 'blog_post_archive_list'),
+)
+urlpatterns += patterns('django.views.generic.date_based',
     
     # Display Post
     url(r'^(?P<year>(\d){4})/(?P<month>(\w){3})/(?P<day>(\d){2})/(?P<slug>[-\w]+)/$', 'object_detail', display_dict, name="post_detail"),

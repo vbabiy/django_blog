@@ -49,8 +49,16 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-#    'debug_toolbar.middleware.DebugToolbarMiddleware', # Django Debug Tool Bar
+    'pagination.middleware.PaginationMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware', # Django Debug Tool Bar
 )
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+        "django.core.context_processors.auth",
+        "django.core.context_processors.debug",
+        "django.core.context_processors.i18n",
+        "django.core.context_processors.media",
+        "django.core.context_processors.request")
 
 ROOT_URLCONF = 'django_blog.urls'
 
@@ -75,7 +83,9 @@ INSTALLED_APPS = (
     'django_blog.profiles',
     'debug_toolbar',
 #    'extensions',
-    'gravatar'
+    'gravatar',
+    'template_utils',
+    'pagination'
 
 )
 DEBUG_TOOLBAR_CONFIG = {

@@ -1,11 +1,13 @@
 {% extends "base.html" %}
+{% load pagination_tags %}
 
 {% block title %}Vitaly Babiy's Blog{% endblock %}
 {% block body %}
     <div id="posts">
-        {{ object_list }}
+        {% autopaginate post_list 10 %}
         {% for object in post_list %}
             {% include "blog/post.html" %}
         {% endfor %}
     </div>
+    {% paginate %}
 {% endblock %}

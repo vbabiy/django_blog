@@ -1,4 +1,5 @@
 {% load comments %}
+{% load comparison %}
 {% get_comment_count for object as comment_count %}
 <div class="post">
     <div class="header">
@@ -17,8 +18,16 @@
         {% if post_display %}
             {{ object.body|safe }}
         {% else %}
-            {{ object.body|safe|truncatewords_html:150 }}
-            <a href="{{ object.get_absolute_url }}"> Continue Reading... </a>
+            {% with object.body|wordcount as size %}
+                {% if_greater size 150 %}
+                    {{ object.body|safe|truncatewords_html:150 }}
+                    <a href="{{ object.get_absolute_url }}"> Continue Reading... </a>
+                {% else %}
+                    tests
+                    {{ object.body|safe }}
+                    <a href="{{ object.get_absolute_url }}"> Read Comments({{ comment_count }})</a>
+                {% endif_greater %}
+            {% endwith %}
         {% endif %}
     </div>
     <div class="post_tags">
