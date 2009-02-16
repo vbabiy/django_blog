@@ -1,0 +1,27 @@
+{% load comments %}
+<form action="{% comment_form_target %}" method="POST">
+    {% for field in form.visible_fields %}  
+        {% if field.errors %}
+            <div class="has_errors">
+        {% else %}
+            <div>
+        {% endif %}
+            {{field.label_tag}}: {{field}}
+            {% for error in field.errors %}
+                <span class="error"> {{ error }}</span>
+            {% endfor %}
+            </div>
+    {% endfor %}
+    
+    <div>
+        {% for field in form.hidden_fields %}
+            {{field}}
+        {% endfor %}
+    </div>
+            
+    <p class="submit">
+    <input type="submit" value="Post" class="submit-post" name="submit"/>
+    <input type="submit" value="Preview" class="submit-preview" name="submit"/>
+    </p>
+</form>
+

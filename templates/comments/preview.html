@@ -9,12 +9,8 @@
   <div class="comment_preview">{{ comment|markdown }}</div>
   <div id="comment_form">
     <h3 class="comment_header">Leave a Comment:</h3>  
-    <form action="{% comment_form_target %}" method="POST">
-        {{ form.as_p }}
-      <p class="submit">
-        <input type="submit" value="Post" class="submit-post" name="submit"/>
-        <input type="submit" value="Preview" class="submit-preview" name="submit"/>
-      </p>
-    </form>
+    {% with comment.content_object as object %}
+        {% include "blog/comment_form.html" %}
+    {% endwith %}
   </div>
 {% endblock %}

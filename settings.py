@@ -50,7 +50,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'pagination.middleware.PaginationMiddleware',
-#    'debug_toolbar.middleware.DebugToolbarMiddleware', # Django Debug Tool Bar
+    'debug_toolbar.middleware.DebugToolbarMiddleware', # Django Debug Tool Bar
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (

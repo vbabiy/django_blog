@@ -379,13 +379,23 @@ div#comment_form form {
 	padding-left:6px
 }
 
-div#comment_form p {
-	padding: 3px;
+div#comment_form form div {
+	margin: 3px;
 	float: left;
 }
 
+div#comment_form form div.has_errors input, div#comment_form form div.has_errors textarea  {
+    border: 2px solid red;
+}
+
+div#comment_form form div span.error {
+    display:block;
+    padding: 4px 0 6px;
+    color:red;
+}
+
 div#comment_form input[type="text"]{
-	width: 358px;
+	width: 280px;
 	border:1px solid #1B3340;
 	font-size: 1em;
 	font-family:georgia,serif;
@@ -396,12 +406,12 @@ div#comment_form input[type="text"]:focus {
 }
 
 div#comment_form input[type="text"]#id_url{
-	width: 724px;
+	width: 728px;
 	border:1px solid #1B3340;
 }
 
 div#comment_form textarea {
-	width: 724px;
+	width: 728px;
 	border:1px solid #1B3340;
 	font-size: 1em;
 	font-family:georgia,serif;

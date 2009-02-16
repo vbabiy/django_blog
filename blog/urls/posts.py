@@ -17,7 +17,7 @@ display_dict = {
 month_dict = {
     'queryset': Post.live.all(),
     'date_field': 'date_published',
-    'template_name': 'blog/post_archive.html',
+    'template_name': 'blog/post_list.html',
     'template_object_name':'post'
 }
 
@@ -39,7 +39,6 @@ urlpatterns = patterns ('django.views.generic.list_detail',
     url(r'^$', 'object_list', index_dict, 'blog_post_archive_list'),
 )
 urlpatterns += patterns('django.views.generic.date_based',
-    
     # Display Post
     url(r'^(?P<year>(\d){4})/(?P<month>(\w){3})/(?P<day>(\d){2})/(?P<slug>[-\w]+)/$', 'object_detail', display_dict, name="post_detail"),
         
