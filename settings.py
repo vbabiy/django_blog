@@ -85,7 +85,8 @@ INSTALLED_APPS = (
 #    'extensions',
     'gravatar',
     'template_utils',
-    'pagination'
+    'pagination',
+    'google_analytics'
 
 )
 DEBUG_TOOLBAR_CONFIG = {

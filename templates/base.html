@@ -3,6 +3,7 @@
 {% load object_counts %}
 {% load date_counts %}
 {% load about_me %}
+{% load analytics %}
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <title>{% block title %}{% endblock %}</title>
@@ -128,5 +129,6 @@
         dp.SyntaxHighlighter.ClipboardSwf = '/site_media/js/syntax_highlighter/clipboard.swf';
         dp.SyntaxHighlighter.HighlightAll('code');
     </script>
+    {% analytics %}
 </body>
 </html>
