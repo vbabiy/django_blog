@@ -87,7 +87,7 @@
                         {% object_counts for blog.Category as categories %}
                         {% for category in categories %}
                             {% ifnotequal category.post_set.count 0 %}
-                            <li><a href="{{ category.get_absolute_url }}">{{ category.name }} ({{category.post_set.count }})</a></li>
+                            <li><a href="{{ category.get_absolute_url }}">{{ category.name }} ({{category.post_set.count }})</a><a href="{% url feeds "category" %}{{ category.slug }}"><img src="/site_media/images/layout/rss.png" alt="{{ category.name }} RSS" /></li>
                             {% endifnotequal %}
                         {% endfor %}
                     </ul>
@@ -95,7 +95,9 @@
                     <ul>
                         {% object_counts for blog.Tag as tags %}
                         {% for tag in tags %}
-                            <li><a href="{{ tag.get_absolute_url }}">{{ tag.name }} ({{tag.post_set.count }})</a></li>
+                            {% ifnotequal tag.post_set.count 0 %}
+                                <li><a href="{{ tag.get_absolute_url }}">{{ tag.name }} ({{tag.post_set.count }})</a></li>
+                            {% endifnotequal %}
                         {% endfor %}
                     </ul>
                     <h2>Archives</h2>

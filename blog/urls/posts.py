@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import *
 from django_blog.blog.models import Post
-from django_blog.blog.feeds import LatestPosts
+from django_blog.blog import feeds
 
 index_dict = {
     'queryset': Post.live.order_by('-date_published'),
@@ -30,7 +30,8 @@ year_dict = {
 }
 
 feeds = {
-    'latest': LatestPosts,
+    'latest': feeds.LatestPosts,
+    'category': feeds.Categories,
 }
 
 urlpatterns = patterns ('django.views.generic.list_detail',

@@ -42,13 +42,11 @@ div#header {
 }
 
 div#header h1 {
-   padding-top: 26px;
-	font-size: 2em;
-   font-style: normal;
-   font-weight: bold;
-   text-transform: normal;
-   letter-spacing: -2px;
-   line-height: 1.2em;
+    padding-top: 26px;
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: -2px;
+    line-height: 1.2em;
 }
 
 div#header h1 a {
@@ -272,6 +270,11 @@ div#sidebar li a:hover {
 	color: #5eb4e2;
 }
 
+div#sidebar img {
+    vertical-align: middle;
+    padding-left: 4px;
+}
+
 /* Footer*/
 div#footer_background {
 	background: #1B3340 url("/site_media/images/layout/footer_background.png") repeat-x;
@@ -395,7 +398,6 @@ div#comment_form input[type="text"]:focus {
 div#comment_form input[type="text"]#id_url{
 	width: 724px;
 	border:1px solid #1B3340;
-	
 }
 
 div#comment_form textarea {
@@ -430,7 +432,7 @@ h2.category {
 	font-family:sans-serif;
 	padding: 6px;
 	margin-bottom: 6px;
-	text-align: right;.
+	text-align: right;
 }
 
 div.pagination { text-align: right; padding: 12px; }
