@@ -13,7 +13,7 @@
         {% endif %}
         <ul>
             {% for comment in comment_list %}
-                <li>
+                <li class="comment">
                     <div class="comment_header">
                         <div class="image">
                             {% gravatar_for_email comment.user_email 80 %}
@@ -35,7 +35,7 @@
         </ul>
     </div>
     <div id="comment_form">
-        <h3 class="comment_header">Leave a Comment:</h3>
+        <h3 class="comment_header">Leave a Comment: <span class="hint">Comments support <a href="http://daringfireball.net/projects/markdown/">markdown</a>.</span></h3>
         {% get_comment_form for object as form %}
         {% include "blog/comment_form.html" %}
     </div>

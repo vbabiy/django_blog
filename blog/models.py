@@ -91,6 +91,11 @@ class Post(models.Model):
                 return self.title
         
         
+import akismet
+from django.conf import settings
+from django.contrib.sites.models import Site 
+
+
 # Signals
 def pre_save_comment(sender, **kargs):
     """
@@ -98,7 +103,20 @@ def pre_save_comment(sender, **kargs):
     """
     if 'comment' in kargs:
         comment = kargs['comment']
+        
+        # If in debug mode skip this check with Akismet
+        if not settings.DEBUG:
+            try:
+                real_key = akismet.verify_key(settings.AKISMET_KEY ,Site.objects.get_current().domain)
+                if real_key:
+                    is_spam = akismet.comment_check(settings.AKISMET_KEY ,Site.objects.get_current().domain, comment.ip_address, None, comment_content=comment.comment)
+                    if is_spam:
+                        comment.is_public = False
+                        print "That was spam"
+            except akismet.AkismetError, e:
+                print e.response, e.statuscode
+        
+        # Apply markdown
         comment.comment = markdown(comment.comment)
-    
-    
+
 comment_will_be_posted.connect(pre_save_comment, Comment)

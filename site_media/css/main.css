@@ -226,6 +226,7 @@ div.post div.post_tags {
 	background: url("/site_media/images/layout/tag.png") no-repeat 10px top;
 	padding: 0px 6px 6px 36px;
 	min-height: 19px;
+	border-top: 1px dotted #ccc;
 }
 
 div.post div.post_tags a {
@@ -310,7 +311,12 @@ div#comments_list h3 {
 	font-size:1.625em;
 }
 
-#comments_list li {
+div#comment_form h3 span.hint {
+    font-size:0.5em;
+    font-style:italic;
+}
+
+#comments_list li.comment {
 	border-bottom:6px solid #D9D9D9;
 	border-left:2px solid #D9D9D9;
 	border-top:2px solid #D9D9D9;
@@ -321,6 +327,8 @@ div#comments_list h3 {
 	float: left;
 	width: 154px;
 	padding: 6px;
+	border-right: 1px dotted #ccc;
+	border-bottom: 1px dotted #ccc;
 }
 
 #comments_list div.comment_header p{
@@ -335,17 +343,34 @@ div#comments_list h3 {
 	font-size: 0.625em;
 }
 
+/*Comment Body*/
+div.comment_body h1 {
+    font-size: 1.15em;
+    font-weight: bold;
+}
+
+div.comment_body ol, div.comment_body ul {
+    padding-left: 30px;
+    padding-top: 6px;
+}
+
+div.comment_body ol li {
+    list-style:  circle;
+}
+
 #comments_list div.comment_body {
 	color:#494848;
 	font-size:0.875em;
 	line-height:16px;
 	padding: 6px;
+	float: right;
+	width: 560px;
+
 }
 
 #comments_list div.comment_body p {
 	padding-bottom: 6px;
 	line-height: inherit;
-	margin-left: 160px;
 }
 
 .comment_preview {
@@ -444,6 +469,7 @@ h2.category {
 	margin-bottom: 6px;
 	text-align: right;
 }
+
 
 div.pagination { text-align: right; padding: 12px; }
 div.pagination span.disabled { color: #ccc; }
