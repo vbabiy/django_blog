@@ -2,7 +2,7 @@
 {
 	font-family: "Consolas", "Courier New", Courier, mono, serif;
 	font-size: 12px;
-	background-color: #1b3340;
+	background-color: #E7E5DC;
 	width: 99%;
 	overflow: auto;
 	margin: 18px 0 18px 0 !important;
@@ -31,7 +31,6 @@
 .dp-highlighter .bar
 {
 	padding-left: 45px;
-	padding-right: 1px;
 }
 
 .dp-highlighter.collapsed .bar,
@@ -43,11 +42,10 @@
 .dp-highlighter ol
 {
 	list-style: decimal; /* for ie */
-	background-color: #1B3340;
+	background-color: #fff;
 	margin: 0px 0px 1px 45px !important; /* 1px bottom margin seems to fix occasional Firefox scrolling */
-	padding-right: 1px;
-	padding-bottom: 6px;
-	color: #5EB4E2;
+	padding: 0px;
+	color: #5C5C5C;
 }
 
 .dp-highlighter.nogutter ol,
@@ -64,9 +62,10 @@
 	list-style-position: outside !important;
 	border-left: 3px solid #6CE26C;
 	background-color: #F8F8F8;
+	color: #5C5C5C;
 	padding: 0 3px 0 10px !important;
 	margin: 0 !important;
-	line-height: 16px;
+	line-height: 14px;
 }
 
 .dp-highlighter.nogutter ol li,
